@@ -1,9 +1,9 @@
 import "dotenv/config"; // load dotenv first to use it every file not get undefined error, declare only once. 
 import express from "express";
-import connectDB from "./src/config/database.js";
-import authRouter from "./src/routes/auth.js";
-import profileRouter from "./src/routes/profile.js";
-import communityRouter from "./src/routes/community.js";
+import connectDB from "./config/database.js";
+import authRouter from "./routes/auth.js";
+import profileRouter from "./routes/profile.js";
+import communityRouter from "./routes/community.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
