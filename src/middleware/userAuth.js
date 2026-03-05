@@ -11,6 +11,10 @@ const userAuth = async (req, res, next) => {
 
     const token = authHeader.split(" ")[1];
 
+    if(!token){
+      return res.status(404).send("please login!");
+    }
+
     const decodedObj = jwt.verify(token, process.env.SECRET_JWT);
 
     const user = await User.findById(decodedObj._id).select("userName photoUrl about");
